@@ -1,0 +1,34 @@
+<div class="container">
+  <h2>{{ isEditMode ? 'Editar Professor' : 'Criar Professor' }}</h2>
+
+  <form [formGroup]="professorForm" (ngSubmit)="saveProfessor()" class="form-container">
+    <div class="form-group">
+      <label for="name" class="form-label">Nome</label>
+      <input type="text" id="name" class="form-control" formControlName="name">
+      <small class="text-danger" *ngIf="professorForm.controls['name'].hasError('maxlength')">
+        O nome pode ter no máximo 100 caracteres.
+      </small>
+      <small class="text-danger" *ngIf="professorForm.controls['name'].hasError('required')">
+        Nome é obrigatório.
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label for="biography" class="form-label">Biografia</label>
+      <textarea id="biography" class="form-control" formControlName="biography"></textarea>
+      <small class="text-danger" *ngIf="professorForm.controls['biography'].hasError('maxlength')">
+        A biografia pode ter no máximo 1000 caracteres.
+      </small>
+      <small class="text-danger" *ngIf="professorForm.controls['biography'].hasError('required')">
+        Biografia é obrigatória.
+      </small>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary" [disabled]="professorForm.invalid">
+        {{ isEditMode ? 'Atualizar' : 'Criar' }}
+      </button>
+      <button type="button" class="btn btn-secondary" (click)="cancel()">Cancelar</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,27 @@
+<div class="container">
+  <h2>Lista de Professores</h2>
+  
+  <a routerLink="/professor/create" class="btn btn-success mb-3">Adicionar Professor</a>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Biografia</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let professor of professors">
+        <td>{{ professor.name }}</td>
+        <td style="white-space: normal; word-break: break-word; max-width: 400px;">
+          {{ professor.biography }}
+        </td>        
+        <td>
+          <a [routerLink]="['/professor/edit', professor.id]" class="btn btn-warning">Editar</a>
+          <button class="btn btn-danger" (click)="deleteProfessor(professor.id)">Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

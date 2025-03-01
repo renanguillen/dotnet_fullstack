@@ -1,0 +1,75 @@
+# 🔹 Diretórios do Visual Studio e do .NET que não devem ser versionados
+.vs/
+bin/
+obj/
+out/
+TestResults/
+node_modules/
+packages/
+GeneratedFiles/
+
+# 🔹 Configurações e arquivos do Visual Studio
+*.user
+*.suo
+*.plist
+*.vspscc
+*.vssscc
+*.ncrunch*
+*.mono
+*.cache
+*.project
+*.pdb
+
+# 🔹 Arquivos de build e logs
+*.exe
+*.dll
+*.log
+*.dat
+*.config
+*.csproj.user
+*.csproj.nuget.g.props
+*.csproj.nuget.g.targets
+*.csproj.Transient.*
+
+# 🔹 Dependências e pacotes do NuGet
+*.nupkg
+project.lock.json
+project.assets.json
+packages.config
+
+# 🔹 Arquivos de publicação e deployment
+publish/
+app.publish/
+wwwroot/
+env/
+secrets.json
+
+# 🔹 Configurações de usuário e credenciais (para segurança)
+secrets.json
+appsettings.Development.json
+appsettings.Local.json
+*.bak
+*.swp
+
+# 🔹 Arquivos temporários e cache
+*.tmp
+*.temp
+*.cache
+*.pidb
+*.tlog
+*.log
+
+# 🔹 Configuração do SonarQube (se estiver usando)
+.sonarqube/
+
+# 🔹 Configuração do Rider (JetBrains)
+.idea/
+*.sln.iml
+
+# 🔹 Arquivos do Resharper (se estiver usando)
+_ReSharper.Caches/
+*.DotSettings.user
+
+# 🔹 Docker (se estiver usando containers)
+docker-compose.override.yml
+docker-compose.*.override.yml
